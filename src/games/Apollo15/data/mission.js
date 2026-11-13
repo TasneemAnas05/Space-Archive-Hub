@@ -1,0 +1,57 @@
+// Real Apollo 15 mission data — source: NASA NSSDC 1971-063C
+export const MISSION = {
+  name: 'Apollo 15',
+  designation: '1971-063C',
+  launchDate: 'July 26, 1971',
+  landingDate: 'July 30, 1971',
+  landingTime: '22:16:29 UT',
+  liftoffDate: 'August 2, 1971',
+  crew: {
+    commander: { name: 'David R. Scott',   callsign: 'CDR Scott',  id: 'scott' },
+    lmPilot:   { name: 'James B. Irwin',   callsign: 'LMP Irwin',  id: 'irwin' },
+    cmPilot:   { name: 'Alfred M. Worden', callsign: 'CMP Worden', id: 'worden' },
+  },
+  spacecraft: {
+    lm: { name: 'Falcon', designation: 'LM-10' },
+    cm: { name: 'Endeavour' },
+  },
+  landingSite: {
+    name: 'Hadley–Apennine',
+    region: 'Mare Imbrium',
+    lat: 26.13239,
+    lon: 3.63330,
+    description: 'At the foot of the Apennine mountain range, beside Hadley Rille',
+  },
+  stats: {
+    evaCount: 3,
+    totalEvaTime: '18h 35m',
+    surfaceTime: '66h 55m',
+    distanceTraveled: '27.9 km',
+    samplesCollected: '77.31 kg',
+    missionDuration: '12 days 7 hours',
+  },
+  alsep: [
+    'Passive Seismometer',
+    'Lunar Surface Magnetometer (LSM)',
+    'Solar Wind Spectrometer',
+    'Suprathermal Ion Detector',
+    'Cold Cathode Ion Gauge',
+    'Lunar Dust Detector',
+    'Heat Flow Experiment',
+  ],
+  achievements: [
+    'Fourth crewed lunar landing',
+    'First use of the Lunar Roving Vehicle (LRV)',
+    'First deep space walk by Worden on return',
+    'Discovery of the Genesis Rock (sample 15415, 4.5 Ga)',
+    "Galileo's hammer-feather gravity demonstration on the Moon",
+    'Most scientifically productive Apollo mission to date',
+  ],
+  quotes: [
+    { speaker: 'Scott',  text: 'Man must explore. And this is exploration at its greatest.' },
+    { speaker: 'Irwin',  text: 'What a view! What a view!' },
+    { speaker: 'Scott',  text: 'Oh, boy, it\'s a good rock!' },
+    { speaker: 'Scott',  text: 'Galileo was correct in his findings.' },
+    { speaker: 'Houston', text: 'Outstanding! You guys are really great!' },
+  ],
+}

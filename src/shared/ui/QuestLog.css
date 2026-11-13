@@ -1,0 +1,99 @@
+.quest-log {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 230px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.quest-active {
+  background: rgba(3, 3, 20, 0.88);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  border-radius: 8px;
+  padding: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.quest-log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.quest-log-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: #00d4ff;
+}
+
+.quest-icon { font-size: 1rem; }
+
+.quest-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  color: #e8eaf0;
+  margin-bottom: 2px;
+}
+
+.quest-subtitle {
+  font-size: 0.65rem;
+  color: #8892a4;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.quest-objectives {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.quest-objectives li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #c8cad0;
+  line-height: 1.4;
+}
+
+.quest-objectives li.done {
+  color: #8892a4;
+  text-decoration: line-through;
+}
+
+.obj-dot {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  color: #00d4ff;
+  margin-top: 1px;
+}
+
+.quest-objectives li.done .obj-dot { color: #44cc88; }
+
+.quest-completed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.quest-completed-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.65rem;
+  color: #44cc88;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.06em;
+  background: rgba(68, 204, 136, 0.08);
+  border: 1px solid rgba(68, 204, 136, 0.2);
+  border-radius: 5px;
+  padding: 4px 8px;
+}

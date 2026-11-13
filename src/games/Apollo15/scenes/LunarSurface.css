@@ -1,0 +1,32 @@
+.lunar-surface-wrapper {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.lunar-canvas {
+  display: block;
+  border-radius: 0 0 8px 8px;
+  /* HUD sits on top — canvas starts at the very top of wrapper */
+}
+
+.surface-controls {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.surface-controls span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: rgba(136, 146, 164, 0.6);
+  background: rgba(3, 3, 20, 0.5);
+  padding: 3px 8px;
+  border-radius: 4px;
+}

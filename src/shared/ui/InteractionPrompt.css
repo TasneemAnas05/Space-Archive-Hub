@@ -1,0 +1,40 @@
+.interact-prompt {
+  position: absolute;
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 10px;
+  background: rgba(3, 3, 20, 0.85);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 100px;
+  backdrop-filter: blur(6px);
+  z-index: 40;
+  pointer-events: none;
+  animation: prompt-in 0.15s ease-out;
+}
+
+@keyframes prompt-in {
+  from { opacity: 0; transform: translateX(-50%) scale(0.9); }
+  to   { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+.interact-key {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  color: #03030f;
+  background: #00d4ff;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 7px;
+  letter-spacing: 0.05em;
+}
+
+.interact-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #e8eaf0;
+}

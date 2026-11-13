@@ -1,0 +1,83 @@
+.dialogue-box {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(760px, calc(100% - 24px));
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(3, 3, 20, 0.92);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 50;
+  animation: dlg-in 0.18s ease-out;
+}
+
+@keyframes dlg-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.dialogue-portrait {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  background: rgba(0, 212, 255, 0.07);
+}
+
+.dialogue-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.dialogue-speaker {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+}
+
+.dialogue-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e8eaf0;
+}
+
+.dialogue-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.dialogue-counter {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  color: #8892a4;
+  letter-spacing: 0.08em;
+}
+
+.dialogue-cta {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  color: #00d4ff;
+  letter-spacing: 0.1em;
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}

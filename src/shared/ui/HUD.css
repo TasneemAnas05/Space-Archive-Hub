@@ -1,0 +1,86 @@
+.hud-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  background: rgba(3, 3, 20, 0.80);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+  backdrop-filter: blur(6px);
+  z-index: 40;
+  pointer-events: none;
+}
+
+.hud-left, .hud-center, .hud-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hud-vehicle-badge {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.12);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  padding: 3px 10px;
+  border-radius: 100px;
+  pointer-events: none;
+}
+
+.hud-clock {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  color: #c8cad0;
+  letter-spacing: 0.08em;
+}
+
+.hud-clock-label {
+  color: #8892a4;
+  font-size: 0.55rem;
+  margin-right: 4px;
+}
+
+.hud-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-stat-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.55rem;
+  color: #8892a4;
+  letter-spacing: 0.1em;
+  min-width: 28px;
+  text-align: right;
+}
+
+.hud-bar-track {
+  width: 60px;
+  height: 5px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.hud-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s;
+}
+
+.hud-bar-fill.o2   { background: linear-gradient(to right, #7b2fff, #00d4ff); }
+.hud-bar-fill.suit { background: linear-gradient(to right, #004488, #00aaff); }
+
+.hud-stat-val {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  color: #c8cad0;
+  min-width: 28px;
+}

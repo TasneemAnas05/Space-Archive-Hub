@@ -1,0 +1,154 @@
+.about {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.about-hero h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-hero p {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timeline h2 {
+  text-align: center;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.timeline-track {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent-1), var(--accent-2), var(--accent-mars));
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.tl-dot {
+  position: absolute;
+  left: -1.6rem;
+  top: 1.2rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--tl-color);
+  box-shadow: 0 0 10px var(--tl-color);
+  flex-shrink: 0;
+}
+
+.tl-year {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  color: var(--tl-color);
+  white-space: nowrap;
+  padding-top: 1rem;
+  min-width: 3.5rem;
+  letter-spacing: 0.05em;
+}
+
+.tl-card {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid color-mix(in srgb, var(--tl-color) 30%, transparent);
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+}
+
+.tl-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.tl-card h3 {
+  color: var(--tl-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.tl-card p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.about-mission {
+  margin-top: 5rem;
+}
+
+.mission-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.mission-box h2 {
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-1);
+  margin-bottom: 1.5rem;
+  text-shadow: var(--glow-cyan);
+}
+
+.mission-box p {
+  color: var(--text-dim);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.mission-values {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.value-tag {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  padding: 0.4rem 1.1rem;
+  border: 1px solid var(--accent-2);
+  color: var(--accent-2);
+  border-radius: 100px;
+}

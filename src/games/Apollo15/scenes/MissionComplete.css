@@ -1,0 +1,158 @@
+.complete-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.complete-panel {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.complete-patch {
+  font-size: 4rem;
+  animation: trophy-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes trophy-pop {
+  from { opacity: 0; transform: scale(0.4) rotate(-15deg); }
+  to   { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+.complete-badge {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: #44cc88;
+  border: 1px solid #44cc88;
+  padding: 0.4rem 1.4rem;
+  border-radius: 100px;
+  box-shadow: 0 0 16px rgba(68,204,136,0.3);
+}
+
+.complete-title {
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #00d4ff, #7b2fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.complete-sub {
+  color: #8892a4;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.complete-quote {
+  background: rgba(13, 13, 43, 0.6);
+  border: 1px solid rgba(123, 47, 255, 0.3);
+  border-radius: 10px;
+  padding: 1.4rem 2rem;
+  max-width: 580px;
+}
+
+.complete-quote blockquote {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #c8cad0;
+  font-style: italic;
+  margin: 0 0 0.75rem;
+}
+
+.complete-quote cite {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #7b2fff;
+}
+
+.complete-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.complete-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0, 212, 255, 0.05);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 10px;
+  padding: 0.9rem 1.4rem;
+}
+
+.cs-val {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  color: #00d4ff;
+  font-weight: 700;
+}
+
+.cs-label { font-size: 0.7rem; color: #8892a4; letter-spacing: 0.08em; }
+
+.complete-legacy {
+  background: rgba(7, 7, 26, 0.7);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  max-width: 620px;
+}
+
+.complete-legacy h3 {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #00d4ff;
+  margin-bottom: 0.9rem;
+}
+
+.complete-legacy p {
+  font-size: 0.875rem;
+  color: #8892a4;
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+
+.complete-legacy p:last-child { margin-bottom: 0; }
+
+.complete-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-replay, .btn-missions, .btn-home {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  padding: 0.7rem 1.6rem;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-replay, .btn-missions, .btn-home { border: 1.5px solid; }
+
+.btn-replay    { border-color: #00d4ff; color: #00d4ff; background: transparent; }
+.btn-missions  { border-color: #7b2fff; color: #7b2fff; background: transparent; }
+.btn-home      { border-color: #8892a4; color: #8892a4; background: transparent; }
+
+.btn-replay:hover, .btn-missions:hover, .btn-home:hover {
+  opacity: 0.75;
+  transform: translateY(-2px);
+}
