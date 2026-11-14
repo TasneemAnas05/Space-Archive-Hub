@@ -1,50 +1,85 @@
-.home {
-  position: relative;
-  z-index: 1;
-  min-height: calc(100vh - 64px);
+/* ── Figma Design Tokens ── */
+:root {
+  --fig-bg:           #0D1117;
+  --fig-card:         #12131E;
+  --fig-card-2:       #161923;
+  --fig-text:         #F4F3FA;
+  --fig-text-dim:     #A5A9BB;
+  --fig-text-muted:   #9194AB;
+  --fig-purple:       #9665E8;
+  --fig-purple-light: #E4D6FF;
+  --fig-purple-tag:   #A97BFF;
+  --fig-border:       #59516D;
+  --fig-peach:        #F4D6C5;
 }
 
-.hero {
+.home-fig {
+  font-family: 'Inter', 'Exo 2', sans-serif;
+  background: var(--fig-bg);
+  color: var(--fig-text);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HERO ── */
+.fig-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0D1117;
+  overflow: hidden;
+}
+
+.fig-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, var(--fig-bg) 100%);
+  pointer-events: none;
+}
+
+.fig-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 8rem 2rem 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 7rem 2rem 4rem;
   gap: 1.5rem;
 }
 
-.hero-badge {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  color: var(--accent-1);
-  border: 1px solid var(--accent-1);
-  padding: 0.4rem 1.2rem;
-  border-radius: 100px;
-  text-shadow: var(--glow-cyan);
+.fig-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--fig-purple-tag);
+  text-transform: uppercase;
 }
 
-.hero-title {
-  font-size: clamp(3rem, 10vw, 6.5rem);
-  line-height: 1.05;
-  letter-spacing: 0.03em;
+.fig-hero-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--fig-text);
+  margin: 0;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-sub {
+.fig-hero-desc {
   max-width: 560px;
-  color: var(--text-dim);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.7;
+  color: var(--fig-text-dim);
+  margin: 0;
 }
 
-.hero-actions {
+.fig-hero-actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -52,112 +87,314 @@
   margin-top: 0.5rem;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  color: #fff;
+.fig-btn-primary {
+  background: var(--fig-purple);
+  color: var(--fig-text);
   border: none;
-  padding: 0.85rem 2.4rem;
+  padding: 0.9rem 1.8rem;
   border-radius: 8px;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
   transition: opacity 0.2s, transform 0.2s;
-  box-shadow: var(--glow-cyan);
 }
 
-.btn-primary:hover {
+.fig-btn-primary:hover {
   opacity: 0.88;
   transform: translateY(-2px);
 }
 
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--border);
-  padding: 0.85rem 2.4rem;
+.fig-btn-secondary {
+  background: #12131E;
+  color: var(--fig-text);
+  border: 1px solid var(--fig-border);
+  padding: 0.9rem 1.8rem;
   border-radius: 8px;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  transition: border-color 0.2s, color 0.2s;
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent-1);
-  color: var(--accent-1);
-}
-
-.hero-stats {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  margin-top: 2rem;
-  padding: 1.5rem 3rem;
-  background: rgba(13, 13, 43, 0.6);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-}
-
-.stat { text-align: center; }
-
-.stat-num {
-  display: block;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--accent-1);
-  text-shadow: var(--glow-cyan);
-}
-
-.stat-label {
-  font-size: 0.7rem;
-  color: var(--text-dim);
-  letter-spacing: 0.1em;
-}
-
-.stat-divider {
-  width: 1px;
-  height: 40px;
-  background: var(--border);
-}
-
-.mission-strip {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 2rem;
-}
-
-.mission-pill {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-  font-size: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
 }
 
-.mission-pill:hover {
-  border-color: var(--accent-1);
-  box-shadow: var(--glow-cyan);
+.fig-btn-secondary:hover {
+  border-color: var(--fig-purple);
+  transform: translateY(-2px);
+}
+
+.fig-hero-scroll {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--fig-text-muted);
+  margin-top: 2rem;
+}
+
+/* ── DESTINATIONS ── */
+.fig-destinations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 580px;
+}
+
+.fig-dest-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fig-dest-moon {
+  background-size: cover;
+  background-position: center;
+  background-color: #0e1520;
+}
+
+.fig-dest-mars {
+  background-size: cover;
+  background-position: center;
+  background-color: #1a0e0a;
+}
+
+.fig-dest-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 10, 16, 0.48);
+}
+
+.fig-dest-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fig-dest-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--fig-text-dim);
+  text-transform: uppercase;
+}
+
+.fig-dest-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.fig-dest-desc {
+  font-size: 1rem;
+  color: rgba(241, 236, 246, 0.8);
+  margin: 0 0 0.5rem;
+}
+
+.fig-btn-dest-primary {
+  background: rgba(238, 232, 255, 0.94);
+  color: #241B35;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.fig-btn-dest-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.fig-btn-dest-muted {
+  background: transparent;
+  color: var(--fig-peach);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: default;
+  width: fit-content;
+}
+
+/* ── APOLLO 15 EXPERIENCE ── */
+.fig-experience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 6rem 5rem;
+  background: var(--fig-bg);
+}
+
+.fig-exp-image {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.fig-exp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.fig-exp-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fig-section-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--fig-purple-tag);
+  text-transform: uppercase;
+}
+
+.fig-exp-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--fig-text);
+  margin: 0;
+}
+
+.fig-exp-desc {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--fig-text-dim);
+  margin: 0;
+}
+
+.fig-exp-features {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--fig-text-muted);
+}
+
+/* ── WAYS TO EXPLORE ── */
+.fig-ways {
+  padding: 5rem;
+  background: #0a0b14;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.fig-ways-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fig-ways-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: var(--fig-text);
+  margin: 0;
+  max-width: 520px;
+}
+
+.fig-ways-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.fig-way-card {
+  background: var(--fig-card);
+  border: 1px solid rgba(89, 81, 109, 0.35);
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.fig-way-card:hover {
+  border-color: var(--fig-purple);
   transform: translateY(-3px);
 }
 
-.mission-pill div {
+.fig-way-num {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--fig-purple-tag);
+}
+
+.fig-way-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fig-text);
+  margin: 0;
+}
+
+.fig-way-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--fig-text-dim);
+  margin: 0;
+}
+
+/* ── VISION ── */
+.fig-vision {
+  padding: 6rem 5rem 4rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  background: var(--fig-bg);
 }
 
-.mission-pill strong {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.8rem;
-  color: var(--accent-1);
+.fig-vision-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--fig-text);
+  margin: 0;
 }
 
-.mission-pill small {
-  font-size: 0.7rem;
-  color: var(--text-dim);
+.fig-vision-desc {
+  max-width: 620px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--fig-text-dim);
+  margin: 0;
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .fig-destinations { grid-template-columns: 1fr; }
+  .fig-experience   { grid-template-columns: 1fr; padding: 3rem 2rem; }
+  .fig-ways         { padding: 3rem 2rem; }
+  .fig-ways-grid    { grid-template-columns: 1fr 1fr; }
+  .fig-vision       { padding: 4rem 2rem 3rem; }
+}
+
+@media (max-width: 600px) {
+  .fig-ways-grid { grid-template-columns: 1fr; }
+  .fig-hero-content { padding: 6rem 1.5rem 4rem; }
 }

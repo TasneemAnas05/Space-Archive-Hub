@@ -1,51 +1,66 @@
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
-  height: 64px;
-  background: rgba(3, 3, 15, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  padding: 0 3rem;
+  height: 72px;
+  background: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(89, 81, 109, 0.3);
 }
 
 .nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Inter', 'Exo 2', sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--accent-1);
+  font-size: 1rem;
   letter-spacing: 0.08em;
-  text-shadow: var(--glow-cyan);
+  color: #F4F3FA;
+  text-transform: uppercase;
 }
-
-.brand-icon { font-size: 1.4rem; }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-links a {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  transition: color 0.2s, text-shadow 0.2s;
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
+  font-family: 'Inter', 'Exo 2', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #A5A9BB;
+  transition: color 0.2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--accent-1);
-  text-shadow: var(--glow-cyan);
-  border-bottom-color: var(--accent-1);
+  color: #F4F3FA;
+}
+
+.nav-profile-btn {
+  font-family: 'Inter', 'Exo 2', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #F4F3FA;
+  background: #161923;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nav-profile-btn:hover {
+  background: #1e2333;
+}
+
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .navbar { padding: 0 1.5rem; }
 }

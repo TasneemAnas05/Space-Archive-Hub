@@ -10,56 +10,58 @@
 }
 
 @keyframes a11y-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.6), 0 0 20px rgba(0, 212, 255, 0.4); }
-  50%       { box-shadow: 0 0 0 8px rgba(0, 212, 255, 0),  0 0 30px rgba(0, 212, 255, 0.7); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(150,101,232,0.5), 0 0 16px rgba(150,101,232,0.3); }
+  50%       { box-shadow: 0 0 0 7px rgba(150,101,232,0),  0 0 24px rgba(150,101,232,0.6); }
 }
 
 .a11y-toggle {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  border: 2.5px solid #00d4ff;
-  background: #0d0d2b;
-  color: #00d4ff;
-  font-size: 1.6rem;
+  border: 2px solid #9665E8;
+  background: #12131E;
+  color: #E4D6FF;
+  font-size: 1.4rem;
   cursor: pointer;
   animation: a11y-pulse 2.5s ease-in-out infinite;
   transition: transform 0.2s;
 }
 
 .a11y-toggle:hover {
-  transform: scale(1.12);
+  transform: scale(1.1);
   animation: none;
-  box-shadow: 0 0 36px rgba(0, 212, 255, 0.9);
+  box-shadow: 0 0 28px rgba(150,101,232,0.8);
 }
 
 .a11y-panel {
-  background: #0d0d2b;
-  border: 1px solid rgba(0, 212, 255, 0.35);
+  background: #12131E;
+  border: 1px solid rgba(89,81,109,0.5);
   border-radius: 12px;
   padding: 20px;
   width: 240px;
-  box-shadow: 0 0 24px rgba(0, 212, 255, 0.35);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(150,101,232,0.15);
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
 .a11y-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.85rem;
-  color: var(--accent-1);
-  letter-spacing: 0.1em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #A97BFF;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .a11y-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
-  color: var(--text);
+  color: #F4F3FA;
 }
 
 .a11y-controls {
@@ -69,64 +71,67 @@
 }
 
 .a11y-controls button {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 6px;
-  border: 1px solid var(--border);
-  background: var(--bg-dark);
-  color: var(--accent-1);
+  border: 1px solid rgba(89,81,109,0.5);
+  background: #0D1117;
+  color: #E4D6FF;
   font-size: 0.8rem;
-  font-family: 'Orbitron', sans-serif;
-  transition: background 0.15s;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
 }
 
 .a11y-controls button:hover {
-  background: rgba(0, 212, 255, 0.15);
+  background: rgba(150,101,232,0.2);
+  border-color: #9665E8;
 }
 
 .a11y-value {
-  min-width: 38px;
+  min-width: 36px;
   text-align: center;
   font-size: 0.8rem;
-  color: var(--text-dim);
+  color: #A5A9BB;
 }
 
 .a11y-toggle-btn {
   padding: 4px 14px;
   border-radius: 20px;
-  border: 1px solid var(--border);
-  background: var(--bg-dark);
-  color: var(--text-dim);
-  font-size: 0.75rem;
-  font-family: 'Orbitron', sans-serif;
-  transition: background 0.15s, color 0.15s;
+  border: 1px solid rgba(89,81,109,0.5);
+  background: #0D1117;
+  color: #A5A9BB;
+  font-size: 0.72rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .a11y-toggle-btn.active {
-  background: var(--accent-1);
-  color: var(--bg-deep);
-  border-color: var(--accent-1);
+  background: #9665E8;
+  color: #F4F3FA;
+  border-color: #9665E8;
 }
 
 .a11y-reset {
-  margin-top: 4px;
+  margin-top: 2px;
   padding: 8px;
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(89,81,109,0.4);
   background: transparent;
-  color: var(--text-dim);
-  font-size: 0.75rem;
-  font-family: 'Orbitron', sans-serif;
+  color: #9194AB;
+  font-size: 0.72rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
 }
 
 .a11y-reset:hover {
-  color: var(--accent-3);
-  border-color: var(--accent-3);
+  color: #F4D6C5;
+  border-color: #F4D6C5;
 }
 
 /* ── Focus mask ── */
-
 .a11y-focus-mask {
   position: fixed;
   inset: 0;
@@ -135,12 +140,11 @@
   background: radial-gradient(
     ellipse 520px 110px at var(--mx, 50%) var(--my, 50%),
     transparent 60%,
-    rgba(0, 0, 0, 0.82) 100%
+    rgba(0,0,0,0.85) 100%
   );
 }
 
 /* ── Global effect classes ── */
-
 html {
   font-size: calc(16px * var(--a11y-font-scale, 1));
 }
@@ -153,7 +157,7 @@ html.high-contrast {
   --text-dim: #cccccc;
   --accent-1: #00ffff;
   --accent-2: #cc88ff;
-  --border: rgba(0, 255, 255, 0.5);
+  --border: rgba(0,255,255,0.5);
 }
 
 html.dyslexic-font body,
