@@ -13,7 +13,7 @@ export default function Navbar() {
         <li><NavLink to="/about">Missions</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
       </ul>
-      <button className="nav-profile-btn" onClick={() => navigate('/about')}>
+      <button className="nav-profile-btn" onClick={() => navigate('/profile')}>
         Explorer profile &nbsp;↗
       </button>
     </nav>

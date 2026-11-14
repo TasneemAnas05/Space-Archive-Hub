@@ -8,6 +8,7 @@ import Apollo11Game from './games/Apollo11'
 import Apollo15Game from './games/Apollo15'
 import ArtemisGame from './games/Artemis'
 import MarsGame from './games/Mars'
+import Profile from './pages/Profile'
 import Stars from './components/Stars'
 import AccessibilityWidget from './components/AccessibilityWidget'
 
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/play/apollo15"  element={<Apollo15Game />} />
           <Route path="/play/artemis"   element={<ArtemisGame />} />
           <Route path="/play/mars"      element={<MarsGame />} />
+          <Route path="/profile"        element={<Profile />} />
         </Routes>
       </main>
       <Footer />
