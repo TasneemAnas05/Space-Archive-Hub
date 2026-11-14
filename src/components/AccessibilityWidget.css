@@ -1,0 +1,177 @@
+.a11y-widget {
+  position: fixed !important;
+  bottom: 32px !important;
+  right: 32px !important;
+  z-index: 999999 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+@keyframes a11y-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.6), 0 0 20px rgba(0, 212, 255, 0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(0, 212, 255, 0),  0 0 30px rgba(0, 212, 255, 0.7); }
+}
+
+.a11y-toggle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2.5px solid #00d4ff;
+  background: #0d0d2b;
+  color: #00d4ff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  animation: a11y-pulse 2.5s ease-in-out infinite;
+  transition: transform 0.2s;
+}
+
+.a11y-toggle:hover {
+  transform: scale(1.12);
+  animation: none;
+  box-shadow: 0 0 36px rgba(0, 212, 255, 0.9);
+}
+
+.a11y-panel {
+  background: #0d0d2b;
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 12px;
+  padding: 20px;
+  width: 240px;
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.a11y-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  color: var(--accent-1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.a11y-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.a11y-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.a11y-controls button {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-dark);
+  color: var(--accent-1);
+  font-size: 0.8rem;
+  font-family: 'Orbitron', sans-serif;
+  transition: background 0.15s;
+}
+
+.a11y-controls button:hover {
+  background: rgba(0, 212, 255, 0.15);
+}
+
+.a11y-value {
+  min-width: 38px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.a11y-toggle-btn {
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-dark);
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-family: 'Orbitron', sans-serif;
+  transition: background 0.15s, color 0.15s;
+}
+
+.a11y-toggle-btn.active {
+  background: var(--accent-1);
+  color: var(--bg-deep);
+  border-color: var(--accent-1);
+}
+
+.a11y-reset {
+  margin-top: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-family: 'Orbitron', sans-serif;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.a11y-reset:hover {
+  color: var(--accent-3);
+  border-color: var(--accent-3);
+}
+
+/* ── Focus mask ── */
+
+.a11y-focus-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 520px 110px at var(--mx, 50%) var(--my, 50%),
+    transparent 60%,
+    rgba(0, 0, 0, 0.82) 100%
+  );
+}
+
+/* ── Global effect classes ── */
+
+html {
+  font-size: calc(16px * var(--a11y-font-scale, 1));
+}
+
+html.high-contrast {
+  --bg-deep: #000000;
+  --bg-dark: #0a0a0a;
+  --bg-card: #111111;
+  --text: #ffffff;
+  --text-dim: #cccccc;
+  --accent-1: #00ffff;
+  --accent-2: #cc88ff;
+  --border: rgba(0, 255, 255, 0.5);
+}
+
+html.dyslexic-font body,
+html.dyslexic-font p,
+html.dyslexic-font span,
+html.dyslexic-font li,
+html.dyslexic-font a,
+html.dyslexic-font button,
+html.dyslexic-font input {
+  font-family: 'OpenDyslexic', sans-serif !important;
+  letter-spacing: 0.05em;
+  word-spacing: 0.15em;
+  line-height: 1.8;
+}
+
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+}

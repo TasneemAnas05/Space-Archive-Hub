@@ -9,6 +9,7 @@ import Apollo15Game from './games/Apollo15'
 import ArtemisGame from './games/Artemis'
 import MarsGame from './games/Mars'
 import Stars from './components/Stars'
+import AccessibilityWidget from './components/AccessibilityWidget'
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <AccessibilityWidget />
     </BrowserRouter>
   )
 }
